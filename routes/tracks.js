@@ -21,7 +21,7 @@ router.get("/", authMiddleware, getItems);
 //Get item by id
 router.get("/:id", authMiddleware, validatorGetItem, getItem);
 //Create new item
-router.post("/", authMiddleware, checkRole(["user","admin"]), validatorCreateItem, createItems);
+router.post("/", authMiddleware, validatorCreateItem, createItems);
 //Update item
 router.put(
   "/:id",
